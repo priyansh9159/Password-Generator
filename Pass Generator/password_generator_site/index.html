@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101322" />
+  <title>Password Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SecureKey home">
+        <span class="brand-icon">✳</span>
+        <span>secure<span class="brand-light">key</span></span>
+      </a>
+      <span class="top-note"><span class="live-dot"></span> PRIVATE BY DESIGN</span>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR DIGITAL SECURITY TOOLKIT</div>
+      <h1>Create passwords<br><span>that protect.</span></h1>
+      <p class="intro-copy">Generate strong, unique passwords in seconds. Your passwords are created right here in your browser — nothing is sent or stored.</p>
+    </section>
+
+    <section class="generator-card" aria-labelledby="generator-title">
+      <div class="card-heading">
+        <div>
+          <div class="section-kicker">PASSWORD STUDIO</div>
+          <h2 id="generator-title">Build your password</h2>
+        </div>
+        <div class="shield-mark" aria-hidden="true">♢</div>
+      </div>
+
+      <div class="password-panel">
+        <div class="password-label">YOUR NEW PASSWORD</div>
+        <div class="password-row">
+          <output id="passwordOutput" class="password-output" aria-live="polite">Click generate to begin</output>
+          <button class="icon-button copy-button" id="copyBtn" type="button" aria-label="Copy password" title="Copy password">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>
+          </button>
+        </div>
+        <div class="password-bottom">
+          <div class="strength-wrap">
+            <span class="strength-caption">STRENGTH</span>
+            <span id="strengthText" class="strength-text">Not generated</span>
+          </div>
+          <div class="strength-bars" id="strengthBars" aria-label="Password strength">
+            <i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="length-heading">
+        <label for="lengthRange">Password length</label>
+        <output id="lengthValue" for="lengthRange">16</output>
+      </div>
+      <input id="lengthRange" class="range-input" type="range" min="4" max="64" value="16" />
+      <div class="range-labels"><span>4 characters</span><span>64 characters</span></div>
+
+      <div class="options-heading">
+        <span>CHARACTER SETTINGS</span>
+        <span class="options-hint">Choose what to include</span>
+      </div>
+      <div class="options-grid">
+        <label class="option-card">
+          <input type="checkbox" id="uppercase" checked />
+          <span class="custom-check"></span>
+          <span class="option-copy"><strong>Uppercase</strong><small>A – Z</small></span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" id="lowercase" checked />
+          <span class="custom-check"></span>
+          <span class="option-copy"><strong>Lowercase</strong><small>a – z</small></span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" id="numbers" checked />
+          <span class="custom-check"></span>
+          <span class="option-copy"><strong>Numbers</strong><small>0 – 9</small></span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" id="symbols" checked />
+          <span class="custom-check"></span>
+          <span class="option-copy"><strong>Symbols</strong><small>! @ # $ %</small></span>
+        </label>
+      </div>
+
+      <label class="toggle-row" for="excludeSimilar">
+        <span class="toggle-copy"><strong>Exclude similar characters</strong><small>Remove 0, O, l, 1, I to avoid confusion</small></span>
+        <span class="switch"><input type="checkbox" id="excludeSimilar" /><span class="switch-track"></span></span>
+      </label>
+
+      <button class="generate-button" id="generateBtn" type="button">
+        <span>Generate password</span><span class="button-arrow">↗</span>
+      </button>
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite">Your password never leaves this device.</p>
+    </section>
+
+    <section class="bottom-info">
+      <div class="info-item"><span class="info-icon">⌁</span><div><strong>Randomly generated</strong><small>Uses your browser's secure random generator.</small></div></div>
+      <div class="info-item"><span class="info-icon">◈</span><div><strong>Nothing stored</strong><small>No account, server, or password history.</small></div></div>
+      <div class="info-item"><span class="info-icon">⛨</span><div><strong>Made for safety</strong><small>Use a unique password for every account.</small></div></div>
+    </section>
+
+    <footer><span>© 2026 SECUREKEY</span><span>BUILT FOR A SAFER DIGITAL LIFE</span></footer>
+  </main>
+</body>
+</html>
